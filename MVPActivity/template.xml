@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="5"
+    name="MVPActivity"
+    minApi="7"
+    minBuildApi="14"
+    description="MVPActivity模板">
+
+    <category value="MVPTemplate" />
+    <formfactor value="Mobile" />
+
+    <parameter
+        id="templateName"
+        name="Activity名称"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${layoutToActivity(layoutName)}"
+        default="Template"
+        help="" />
+
+    <parameter
+        id="layoutName"
+        name="布局名称"
+        type="string"
+        constraints="class|unique|nonempty"
+        suggest="${activityToLayout(templateName)}"
+        default="template"
+        help="" />
+
+    <thumbs>
+        <thumb>template_cover.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
